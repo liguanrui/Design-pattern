@@ -13,7 +13,7 @@ define ( 'SYSDIR_CORE', SYSDIR_SYSTEM.'/core');
 define ( 'SYSDIR_DATABASE', SYSDIR_SYSTEM.'/database');
 
 
-spl_autoload_register(autoload);
+spl_autoload_register('app\config\autoload');
 
 function autoload($class){
 	$file = SYSDIR_ROOT.'/'.str_replace('\\','/',$class).'.php';
