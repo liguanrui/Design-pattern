@@ -7,11 +7,17 @@ namespace system\core;
  */
 class Factory{
 	
-     public static function createUser($name){
-         return new  User($name);
+     public static function createUser($uid,$name,$account){
+         return new User($uid,$name,$account);
      }
 
      public static function createSingleton(){
          return Singleton::getInstance();
+     }
+     
+     public static function createRegister($uid,$name,$account){
+     	$user = new User($uid,$name,$account);
+     	Register::set("user",$user);
+     	return $user;
      }
 }
