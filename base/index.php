@@ -1,12 +1,18 @@
 <?php 
-include_once __DIR__."/app/config/config.php";
+$Root =  dirname ( __FILE__ );
+include $Root.'/app/config/config.php';
 
-//演示单例
+//单例模式
 system\core\Singleton::getInstance()->index();
 
-//演示工厂模式
+//工厂模式
+$user = system\core\Factory::createUser("lee");
+$user->index();
 
-//演示注册树模式
+//单例+工厂模式
+$Singleton = system\core\Factory::createSingleton();
+$Singleton->index();
+
 
 
 ?>
