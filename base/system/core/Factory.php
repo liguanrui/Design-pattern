@@ -8,7 +8,7 @@ namespace system\core;
 class Factory{
 	
      public static function createUser($uid,$name,$account){
-         return new User($uid,$name,$account);
+         return new my\User($uid,$name,$account);
      }
 
      public static function createSingleton(){
@@ -16,7 +16,7 @@ class Factory{
      }
      
      public static function createRegister($uid,$name,$account){
-     	$user = new User($uid,$name,$account);
+     	$user = new my\User($uid,$name,$account);
      	Register::set("user",$user);
      	return $user;
      }

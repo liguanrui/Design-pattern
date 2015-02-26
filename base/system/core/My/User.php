@@ -1,5 +1,5 @@
 <?php
-namespace system\core;
+namespace system\core\My;
 /**
  * @description 用户
  * @author liguanrui
