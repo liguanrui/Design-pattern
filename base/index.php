@@ -1,4 +1,5 @@
 <?php 
+use system\my\TrainStrategy;
 $Root =  dirname ( __FILE__ );
 include $Root.'/app/config/config.php';
 
@@ -25,8 +26,12 @@ $db->query("show databases");
 $db->close();
 
 //策略模式
+$person = new system\core\Strategy(new system\my\TrainStrategy());
+$person->travel();
 
-
+//改坐飞机模式
+$person->setTravelStrategy(new system\my\AirPlaneStrategy());
+$person->travel();
 
 
 ?>
