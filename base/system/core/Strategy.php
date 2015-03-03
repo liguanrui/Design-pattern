@@ -1,16 +1,16 @@
 <?php
 namespace system\core;
 
-use system\my\TrainStrategy;
+use system\core\my\TraveStrategy;
 class Strategy{
 	
 	private $_strategy = null;
 	
-	public function __construct(TrainStrategy $travel){
+	public function __construct(TraveStrategy $travel){
 		$this->_strategy = $travel;
 	}
 	
-	public function setTravelStrategy(TrainStrategy $travel){
+	public function setTravelStrategy(TraveStrategy $travel){
 		$this->_strategy = $travel;
 	}
 	

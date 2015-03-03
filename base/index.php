@@ -26,11 +26,11 @@ $db->query("show databases");
 $db->close();
 
 //策略模式
-$person = new system\core\Strategy(new system\my\TrainStrategy());
+$person = new system\core\Strategy(new system\core\My\TrainStrategy());
 $person->travel();
 
 //改坐飞机模式
-$person->setTravelStrategy(new system\my\AirPlaneStrategy());
+$person->setTravelStrategy(new system\core\My\AirPlaneStrategy());
 $person->travel();
 
 

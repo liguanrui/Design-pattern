@@ -1,7 +1,7 @@
 <?php
-namespace system\my;
+namespace system\core\My;
 
-use system\core\My\TraveStrategy;
+
 class TrainStrategy implements TraveStrategy{
 	
 	public function travelAlgorithm(){
