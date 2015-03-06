@@ -28,10 +28,17 @@ $db->close();
 //策略模式
 $person = new system\core\Strategy(new system\core\My\TrainStrategy());
 $person->travel();
-
 //改坐飞机模式
 $person->setTravelStrategy(new system\core\My\AirPlaneStrategy());
 $person->travel();
+
+//数据对象映射模式
+$log = new system\core\My\Log(1);
+print_r($log);
+$log->type=2;
+$log->content="hello";
+$log->updateTime=time();
+
 
 
 ?>

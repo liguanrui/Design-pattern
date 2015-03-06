@@ -3,6 +3,7 @@ namespace app\config;
 /**
 *	@label 定义各个目录常量
 */
+header("Content-type: text/html; charset=utf-8");
 define ( 'SYSDIR_ROOT', realpath ( dirname ( __FILE__ ) . '/../../' ) );
 define ( 'SYSDIR_APP', SYSDIR_ROOT.'/app');
 define ( 'SYSDIR_SYSTEM', SYSDIR_ROOT.'/system');
