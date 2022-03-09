@@ -4,19 +4,21 @@ namespace PHP\Prototype;
 
 function main()
 {
-    $cat01 = new Cat('Persian', 'gray', 520, 100);
+    $cat01 = new Cat('sufi','Persian', 'gray', 520, 100);
     $cat01->eat(new Fish());
     $cat01->eat(new Egg());
     $cat01->walk(30);
 
     $cat02 = clone $cat01;
 
-    print_r($cat01);
     print_r($cat02);
+    print_r($cat01);
 }
 
 class Cat
 {
+    protected $name;
+
     protected $varieties;
 
     protected $color;
@@ -25,23 +27,32 @@ class Cat
 
     protected $height;
 
-    protected $stomach;
+    protected $stomach = [];
 
-    public function __construct($varieties, $color, $weight, $height)
+    public function __construct($name, $varieties, $color, $weight, $height)
     {
-        
+        $this->name = $name;
+        $this->varieties = $varieties;
+        $this->color = $color;
+        $this->weight = $weight;
+        $this->height = $height;
     }
 
     public function eat(Food $food)
     {
-        $stomach[] = $food;
-        $weight += $food->transferWeight();
+        $this->stomach[] = $food;
+        $this->weight += $food->transferWeight();
     }
 
     public function walk($minute)
     {
         //walk;
-        $weight -= $minute * 0.25;
+        $this->weight -= $minute * 0.25;
+    }
+
+    public function __clone()
+    {
+        $this->name = $this->name . " copy";
     }
 }
 
@@ -51,7 +62,7 @@ abstract class Food
 
     public function transferWeight()
     {
-        return $energy/2;
+        return $this->energy/2;
     }
 }
 
