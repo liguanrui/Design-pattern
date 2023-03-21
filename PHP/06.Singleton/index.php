@@ -9,7 +9,7 @@ function main()
 
 
     if ($c1 === $c2) {
-        echo "this is a single instance.";
+        echo "this is a single instance. happy.";
     } else {
         echo "this is not single instance.";
     }
