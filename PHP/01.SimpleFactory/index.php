@@ -56,7 +56,7 @@ class Facebook extends SocialPlatform
     {
         $this->getAccessToken($code);
         // get User Info
-        return new User('F-1','Cat');
+        return new User('F-1','bommcast');
     }
 }
 
