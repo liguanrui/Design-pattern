@@ -63,10 +63,10 @@ class Facebook extends SocialPlatform
 class Google extends SocialPlatform
 {
 
-    protected function getAccessToken(string $code): string
+    protected function getAccessToken(string $code): ?string
     {
         // code to token
-        return 'Get Google AccessToken.';
+        return 'Get AccessToken with Google.';
     }
 
     public function getUser($code): User
